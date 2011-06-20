@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="/media/css/pygments.css"> 
+
+language:{{language.name}}
+<br>
+{%for i in object_list%}
+<a href="{{i.get_absolute_url}}">{{i.title}}</a>
+{%endfor%}
