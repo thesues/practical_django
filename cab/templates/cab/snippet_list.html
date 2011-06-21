@@ -1,5 +1,3 @@
-
-
 {%if request.user.is_authenticated  %}
 hello {{request.user.username}}
 <a href="{%url cab.views.register.logout %}">logout</a>
