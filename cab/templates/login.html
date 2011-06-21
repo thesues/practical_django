@@ -1,0 +1,17 @@
+<form method="post" action="{% url cab.views.register.login %}">{% csrf_token %}
+<table>
+<tr>
+<td>username</td>
+<td>
+<input id="username" type="text" name="username" maxlength="30" />
+</td>
+</tr>
+<tr>
+<td>
+password
+</td>
+    <td><input type="password" name="password"/></td>
+</tr>
+</table>
+<input type="submit" value="login" />
+</form>

@@ -6,6 +6,8 @@ from markdown import markdown
 import datetime
 from django.db.models import permalink
 from django.contrib import admin
+from cab import managers
+
 # Create your models here.
 class Language(models.Model):
     name=models.CharField(max_length=100)
@@ -21,7 +23,7 @@ class Language(models.Model):
         return ('cab_language_detail',(),{'slug':self.slug})
     def get_lexer(self):
         return lexers.get_lexer_by_name(self.language_code)
-
+    objects=managers.LanguageManager()
 
 class Snippet(models.Model):
     title = models.CharField(max_length=255)
@@ -50,6 +52,7 @@ class Snippet(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('cab_snippet_detail',(),{'object_id':self.id})
+    objects=managers.SnippetManager()
 
 class LanguageAdmin(admin.ModelAdmin):
     pass

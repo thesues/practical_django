@@ -1,8 +1,14 @@
+
+
+{%if request.user.is_authenticated  %}
+hello {{request.user.username}}
+<a href="{%url cab.views.register.logout %}">logout</a>
+
+
 {%for snippet in snippet_list%}
 <a href="{{snippet.get_absolute_url}}">{{snippet.title}}</a>
 {%endfor%}
 
-<p>
 
 {% if page.has_previous %}
 <a href="?page={{ page.previous_page_number }}">Previous page</a>
@@ -11,4 +17,11 @@
 {% if page.has_next_page %}
 <a href="?page={{ page.next_page_number }}">Next page</a>
 {% endif %}</p>
+<br>
+{%else%}
+please login
+<a href="{%url cab.views.register.login %}">login</a>
+{%endif%}
+<br>
+
 
