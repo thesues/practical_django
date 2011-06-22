@@ -8,6 +8,7 @@ from django.contrib import auth
 from django.http import HttpResponseRedirect 
 from django.core.urlresolvers import reverse
 from django.contrib.auth import authenticate, login as auth_login ,logout as auth_logout
+from django.template import RequestContext
 
 class SignupForm(forms.Form):
     username = forms.CharField(max_length=30)
@@ -43,7 +44,7 @@ def sighup(request):
     else:
         form = SignupForm()
     return render_to_response('signup.html',
-                                      add_csrf(request,{ 'form': form }))
+                                       ,add_csrf(request,{'form':form}))
 def login(request):
     if request.POST:
         username=request.POST['username']

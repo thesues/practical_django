@@ -3,6 +3,8 @@ from django.forms import ModelForm
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
 from cab.models import Snippet
+from django.core.context_processors import csrf
+
 class SnippetForm(ModelForm):
     class Meta:
         model = Snippet
@@ -19,4 +21,3 @@ def add_snippet(request):
     else:
         form = SnippetForm()
     return render_to_response('cab/add_snippet.html',{ 'form': form })
-

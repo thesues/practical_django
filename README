@@ -1,5 +1,6 @@
-this is great
-加入一段话测开始
-asdfsadfsdfsadf
+learn how to use get_absolute_url
+generic views and fix csrf , RequestContext
+and TEMPLATE_CONTEXT_PROCESSORS
+
 
 zhang

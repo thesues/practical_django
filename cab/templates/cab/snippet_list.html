@@ -1,5 +1,8 @@
-{%if request.user.is_authenticated  %}
-hello {{request.user.username}}
+{{app}}
+{{ip_address}}
+
+{%if user.is_authenticated  %}
+hello {{user.username}}
 <a href="{%url cab.views.register.logout %}">logout</a>
 
 
@@ -10,7 +13,7 @@ hello {{request.user.username}}
 
 {% if page.has_previous %}
 <a href="?page={{ page.previous_page_number }}">Previous page</a>
-{% endif %}
+{% endif %}  
 {{ page }} of {{paginator.num_pages}}
 {% if page.has_next_page %}
 <a href="?page={{ page.next_page_number }}">Next page</a>
