@@ -1,6 +1,9 @@
 learn how to use get_absolute_url
 generic views and fix csrf , RequestContext
 and TEMPLATE_CONTEXT_PROCESSORS
-
+get_absolute_url
+model:get_absolute_url:args 
+urls
+view:viewname
 
 zhang

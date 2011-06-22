@@ -43,8 +43,7 @@ def sighup(request):
             return HttpResponseRedirect("/accounts/login/")
     else:
         form = SignupForm()
-    return render_to_response('signup.html',
-                                       ,add_csrf(request,{'form':form}))
+    return render_to_response('signup.html',add_csrf(request,{'form':form}))
 def login(request):
     if request.POST:
         username=request.POST['username']
